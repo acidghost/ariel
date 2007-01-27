@@ -1,3 +1,34 @@
+= New plan =
+- Start a major rethink of the codebase, and the way things work. Aim for less 
+  complexity.
+- In the short term this will mean fewer features, but more functionality.  
+  Focus on getting non-list extraction working really well.
+- For complicated tasks like working out how to extract lists based on few 
+  examples, it's ok to ask for human help. A human can very quickly and 
+  accurately point to invalid matches, or pick out good ones. This turns what 
+  was an algorithmic/heuristic issue in to a UI issue. Perhaps that's easier 
+  to deal with.
+- Rewrite rule matching to use StringScanner as its base. Remember that we can 
+  use regexes where it makes sense, but the full rule matching system can't be 
+  expressed using only regex. Make the object elegantly use regex where 
+  appropriate, and use other searching techniques for rules that require them.  
+  An idea is to keep a skip table of pre-calculated token boundaries (can use 
+  a relatively expensive technique to split the document in to the "best" 
+  token arrangement that's basically the same as what's done now). This can be 
+  used to move forward to the next token, something that's difficult using 
+  just regex. If these objects are implemented in a smart enough way, it would 
+  hopefully be easy to make it so that adding a parameter to the end of the 
+  rule will mean that it uses the cached result for the previous real, then 
+  just tries the end of the query.
+- Switch to test/spec. Less magic, more fun. Very sensible.
+- Don't talk about TokenStream's, it's misleading. At best there is a 
+  TokenArray, but the new implementation probably won't use this. It might be 
+  faster?
+
+
+= Old plans, this will be done when the codebase stablises again =
+
+
 - Save tokenization rules alongside the serialized structure.
 - Generalize the rule search method to a beam search (with beam=1 by default)
 - Create a sensible stopping criterion when further refining list iteration rules.
