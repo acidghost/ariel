@@ -17,7 +17,7 @@ module Ariel
   # #refine. Adjust the search algorithm through #select_candidates and 
   # #filter_rules, and the search heuristic through #evaluate_rule.
   #
-  # Overfitting avoidance can be provided in #stopping_criterion_met?, 
+  # Overfitting avoidance can be provided in #stopping_criterion_met?,
   # #rule_stopping_criterion_met? or #post_process.
 
   class Learner
@@ -249,8 +249,9 @@ module Ariel
       topology_refs=[]
       start_pos = rule.partial(0..index).closest_match(current_seed, :early)
       end_pos = current_seed.label_index #No point adding tokens that occur after the label_index
-      assert { not start_pos.nil?}
-      assert {not end_pos.nil?}
+      #assert { not start_pos.nil?}
+      #assert {not end_pos.nil?}
+      raise Exception('assert..') if start_pos.nil? or end_pos.nil?
       current_seed.tokens[start_pos...end_pos].each do |token|
         r=rule.deep_clone
         r.landmarks.insert(index+1, [token.text])
