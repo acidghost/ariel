@@ -10,9 +10,9 @@ module Ariel
     # regular expressions will return any properly formatted label tag. The
     # namespace to search for can also be modified. The returned regular
     # expressions are case insensitive.
-    def self.label_regex(tag_contents='\w+', namespace='l')
-      [/#{S_LABEL}#{namespace}:#{tag_contents}#{E_LABEL}/i,
-      /#{S_LABEL}\/#{namespace}:#{tag_contents}#{E_LABEL}/i]
+    def self.label_regex(tag_contents='\w+', namespace='ariel')
+      [/#{S_LABEL}#{namespace}-#{tag_contents}#{E_LABEL}/i,
+      /#{S_LABEL}\/#{namespace}-#{tag_contents}#{E_LABEL}/i]
     end
 
     # Helper function that returns a regex that will match any open or closing
