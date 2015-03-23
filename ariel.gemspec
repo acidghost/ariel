@@ -13,5 +13,5 @@ documents including (but not in any way limited to) web pages}
   s.extra_rdoc_files=['README', 'LICENSE']
   s.rdoc_options=['--main', 'README']
   s.executables = ['ariel']
-  s.files = Dir['lib/**/*'] + Dir['test/**/*'] + s.extra_rdoc_files + Dir['examples/**/*'] + Dir['bin/*'] 
+  s.files = Dir['lib/**/*'] + Dir['test/**/*'] + s.extra_rdoc_files + Dir['examples/**/*'] + Dir['bin/*']
 end
