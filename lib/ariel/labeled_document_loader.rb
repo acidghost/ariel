@@ -14,7 +14,7 @@ module Ariel
       def supervise_learning(structure, *labeled_strings)
         raise ArgumentError, "No labeled strings were given" if labeled_strings.size==0
         loaded_example_hash=process_labeled_strings(structure, *labeled_strings)
-        loaded_example_hash.each_pair do |structure_node, example_nodes| 
+        loaded_example_hash.each_pair do |structure_node, example_nodes|
           if structure_node.node_type==:list_item
             exhaustive=true
           else

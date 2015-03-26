@@ -1,0 +1,191 @@
+--- &1 !ruby/object:Ariel::Node::Structure
+children:
+  :name: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :name
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "-"
+        - - RAA
+          - "-"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</title>"
+        direction: :back
+        exhaustive: false
+  :current_version: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :current_version
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "/"
+        - - caption
+        - - "/"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</p>"
+        - - table
+        - - "</p>"
+        direction: :back
+        exhaustive: false
+  :short_description: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :short_description
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "<td>"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</td>"
+        - - Category
+        - - "</td>"
+        direction: :back
+        exhaustive: false
+  :category: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :category
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "<td>"
+        - - "<td>"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</td>"
+        - - Status
+        - - "</td>"
+        direction: :back
+        exhaustive: false
+  :owner: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :owner
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - ">"
+        - - com
+        - - ">"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</a>"
+        - - id
+        - - "</a>"
+        direction: :back
+        exhaustive: false
+  :homepage: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :homepage
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - ">"
+        - - rubyforge
+        - - ">"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</a>"
+        - - Download
+        - - "</a>"
+        direction: :back
+        exhaustive: false
+  :license: !ruby/object:Ariel::Node::Structure
+    children: {}
+    node_name: :license
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "<td>"
+        - - License
+        - - "<td>"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</td>"
+        - - Dependency
+        - - "</td>"
+        direction: :back
+        exhaustive: false
+  :version_history: &2 !ruby/object:Ariel::Node::Structure
+    children:
+      :version: !ruby/object:Ariel::Node::Structure
+        children: {}
+        node_name: :version
+        node_type: :list_item
+        parent: *2
+        ruleset: !ruby/object:Ariel::RuleSet
+          start_rules:
+          - !ruby/object:Ariel::Rule
+            landmarks:
+            - - ">"
+            direction: :forward
+            exhaustive: true
+          end_rules:
+          - !ruby/object:Ariel::Rule
+            landmarks:
+            - - "</a>"
+            direction: :back
+            exhaustive: true
+    node_name: :version_history
+    node_type: :not_list
+    parent: *1
+    ruleset: !ruby/object:Ariel::RuleSet
+      start_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "<td>"
+        - - Versions
+        - - "<td>"
+        direction: :forward
+        exhaustive: false
+      end_rules:
+      - !ruby/object:Ariel::Rule
+        landmarks:
+        - - "</td>"
+        direction: :back
+        exhaustive: false
+node_name: :root
+node_type: :not_list

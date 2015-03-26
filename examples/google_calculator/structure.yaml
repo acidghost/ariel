@@ -7,36 +7,8 @@ children:
         node_name: :result
         node_type: :not_list
         parent: *1
-        ruleset: !ruby/object:Ariel::RuleSet
-          end_rules:
-          - !ruby/object:Ariel::Rule
-            direction: :back
-            exhaustive: false
-            landmarks: []
-          start_rules:
-          - !ruby/object:Ariel::Rule
-            direction: :forward
-            exhaustive: false
-            landmarks:
-            - - "="
     node_name: :calculation
     node_type: :not_list
     parent: *2
-    ruleset: !ruby/object:Ariel::RuleSet
-      end_rules:
-      - !ruby/object:Ariel::Rule
-        direction: :back
-        exhaustive: false
-        landmarks:
-        - - "</b>"
-        - - "</b>"
-      start_rules:
-      - !ruby/object:Ariel::Rule
-        direction: :forward
-        exhaustive: false
-        landmarks:
-        - - "<b>"
-        - - gif
-        - - "<b>"
 node_name: :root
 node_type: :not_list

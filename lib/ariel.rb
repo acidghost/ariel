@@ -94,8 +94,13 @@ module Ariel
       strings=[]
       files.each do |file|
         if file.kind_of? String
-          next unless File.file? file
-          strings << File.read(file)
+          # next unless File.file? file
+          # strings << File.read(file)
+          if File.file? file
+            strings << File.read(file)
+          else
+            strings.push file
+          end
         elsif file.respond_to? :read
           strings << file.read
         else
